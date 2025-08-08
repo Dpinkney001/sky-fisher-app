@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -38,7 +37,9 @@ function BlogPage() {
             <h2 className="text-xl font-bold mt-2">{post.title}</h2>
             <p className="text-sm text-gray-500">{post.date}</p>
             <p className="mt-2 text-gray-700">{post.excerpt}</p>
-            <Button className="mt-4">Read More</Button>
+            <Button className="mt-4" asChild>
+            <Link to={`/blog/${post.id}`}>Read More</Link>
+            </Button>
           </CardContent>
         </Card>
       ))}
@@ -92,6 +93,7 @@ export default function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/content" element={<ContentPage />} />
         <Route path="/merch" element={<MerchPage />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
       </Routes>
     </Router>
   );
