@@ -1,7 +1,10 @@
-import React from 'react'
+
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+
+
 
 // Dummy Data
 const blogPosts = [
@@ -94,7 +97,6 @@ export default function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/content" element={<ContentPage />} />
         <Route path="/merch" element={<MerchPage />} />
-        <Route path="/blog/:id" element={<BlogDetail />} />
       </Routes>
     </Router>
   );
